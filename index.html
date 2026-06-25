@@ -1,0 +1,1941 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investment Portal V3</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Investment Portal</h1>
+
+<h2>Gold Rates (Update Manually or Connect API)</h2>
+<div class="card">
+24K Gold: ₹ ______ / 10g<br>
+22K Gold: ₹ ______ / 10g<br>
+Last Updated: ______
+</div>
+
+<h2>Mutual Fund Screener (190 Funds)</h2>
+<input type="text" id="search" placeholder="Search fund..." onkeyup="filterTable()">
+<table border="1" class="dataframe fundtable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Name↑</th>
+      <th>Sub Category</th>
+      <th>AUM</th>
+      <th>CAGR 3Y</th>
+      <th>CAGR 5Y</th>
+      <th>CAGR 10Y</th>
+      <th>Expense Ratio</th>
+      <th>SEBI Risk Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Aditya Birla SL Banking &amp; Financial Services Fund</td>
+      <td>Sectoral Fund - Banks &amp; Financial Services</td>
+      <td>3466.31</td>
+      <td>14.42</td>
+      <td>13.24</td>
+      <td>14.23</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Dividend Yield Fund</td>
+      <td>Dividend Yield Fund</td>
+      <td>1458.93</td>
+      <td>16.94</td>
+      <td>15.27</td>
+      <td>14.08</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Dynamic Asset Allocation Omni FOF</td>
+      <td>FoFs (Domestic) - Equity Oriented</td>
+      <td>232.63</td>
+      <td>15.42</td>
+      <td>13.10</td>
+      <td>13.40</td>
+      <td>-</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Dynamic Asset Allocation Omni FOF(IDCW Payout)</td>
+      <td>FoFs (Domestic) - Equity Oriented</td>
+      <td>232.63</td>
+      <td>15.42</td>
+      <td>13.10</td>
+      <td>13.40</td>
+      <td>-</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Dynamic Asset Allocation Omni FOF(IDCW)</td>
+      <td>FoFs (Domestic) - Equity Oriented</td>
+      <td>232.63</td>
+      <td>15.42</td>
+      <td>13.10</td>
+      <td>13.40</td>
+      <td>-</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Flexi Cap Fund</td>
+      <td>Flexi Cap Fund</td>
+      <td>26032.2</td>
+      <td>17.59</td>
+      <td>13.56</td>
+      <td>15.48</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Focused Fund</td>
+      <td>Focused Fund</td>
+      <td>7731.62</td>
+      <td>15.77</td>
+      <td>12.91</td>
+      <td>13.91</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Global Emerging Opp Fund</td>
+      <td>FoFs (Overseas)</td>
+      <td>284.22</td>
+      <td>22.13</td>
+      <td>12.35</td>
+      <td>12.39</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Global Emerging Opp Fund(IDCW)</td>
+      <td>FoFs (Overseas)</td>
+      <td>284.22</td>
+      <td>22.13</td>
+      <td>12.35</td>
+      <td>12.34</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Global Emerging Opp Fund(IDCW-Payout)</td>
+      <td>FoFs (Overseas)</td>
+      <td>284.22</td>
+      <td>22.13</td>
+      <td>12.35</td>
+      <td>12.34</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Gold Fund</td>
+      <td>FoFs - Gold</td>
+      <td>1821.6</td>
+      <td>33.25</td>
+      <td>23.46</td>
+      <td>15.44</td>
+      <td>-</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Gold Fund(IDCW)</td>
+      <td>FoFs - Gold</td>
+      <td>1821.6</td>
+      <td>33.24</td>
+      <td>23.46</td>
+      <td>15.45</td>
+      <td>-</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Gold Fund(IDCW-Reinv)</td>
+      <td>FoFs - Gold</td>
+      <td>1821.6</td>
+      <td>33.24</td>
+      <td>23.46</td>
+      <td>15.45</td>
+      <td>-</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Infrastructure Fund</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>1171.53</td>
+      <td>22.52</td>
+      <td>20.69</td>
+      <td>16.57</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Intl. Equity Fund</td>
+      <td>Thematic Fund - Global</td>
+      <td>329.41</td>
+      <td>19.59</td>
+      <td>12.20</td>
+      <td>13.36</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Mfg. Equity Fund</td>
+      <td>Thematic Fund</td>
+      <td>1198.27</td>
+      <td>22.39</td>
+      <td>15.07</td>
+      <td>15.24</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Midcap Fund</td>
+      <td>Mid Cap Fund</td>
+      <td>6397.52</td>
+      <td>20.19</td>
+      <td>17.19</td>
+      <td>15.30</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Multi-Asset Omni FOF</td>
+      <td>FoFs (Domestic) - Hybrid</td>
+      <td>406.83</td>
+      <td>18.83</td>
+      <td>14.19</td>
+      <td>13.64</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Multi-Asset Omni FOF(IDCW Payout)</td>
+      <td>FoFs (Domestic) - Hybrid</td>
+      <td>406.83</td>
+      <td>18.83</td>
+      <td>14.19</td>
+      <td>13.65</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Multi-Asset Omni FOF(IDCW)</td>
+      <td>FoFs (Domestic) - Hybrid</td>
+      <td>406.83</td>
+      <td>18.83</td>
+      <td>14.19</td>
+      <td>13.65</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Small Cap Fund</td>
+      <td>Small Cap Fund</td>
+      <td>5452.53</td>
+      <td>18.85</td>
+      <td>15.30</td>
+      <td>14.65</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Aditya Birla SL Value Fund</td>
+      <td>Value Fund</td>
+      <td>6529.52</td>
+      <td>19.54</td>
+      <td>16.16</td>
+      <td>14.12</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Axis Gold Fund</td>
+      <td>FoFs - Gold</td>
+      <td>2941.95</td>
+      <td>32.72</td>
+      <td>23.41</td>
+      <td>15.36</td>
+      <td>0.18</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Axis Gold Fund(IDCW)</td>
+      <td>FoFs - Gold</td>
+      <td>2941.95</td>
+      <td>32.72</td>
+      <td>23.41</td>
+      <td>15.36</td>
+      <td>0.18</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Axis Gold Fund(IDCW)</td>
+      <td>FoFs - Gold</td>
+      <td>2941.95</td>
+      <td>32.72</td>
+      <td>23.41</td>
+      <td>15.36</td>
+      <td>0.18</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Axis Midcap Fund</td>
+      <td>Mid Cap Fund</td>
+      <td>32852.13</td>
+      <td>19.02</td>
+      <td>16.02</td>
+      <td>18.65</td>
+      <td>0.57</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Axis Small Cap Fund</td>
+      <td>Small Cap Fund</td>
+      <td>27438.53</td>
+      <td>17.72</td>
+      <td>18.77</td>
+      <td>20.26</td>
+      <td>0.61</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>HDFC Balanced Advantage Fund</td>
+      <td>Balanced Advantage Fund</td>
+      <td>1,04,016.21</td>
+      <td>15.32</td>
+      <td>15.95</td>
+      <td>15.44</td>
+      <td>0.75</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>HDFC ELSS Tax saver</td>
+      <td>Equity Linked Savings Scheme (ELSS)</td>
+      <td>15366.5</td>
+      <td>16.64</td>
+      <td>16.91</td>
+      <td>14.50</td>
+      <td>1.11</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>HDFC Flexi Cap Fund</td>
+      <td>Flexi Cap Fund</td>
+      <td>1,01,821.82</td>
+      <td>18.72</td>
+      <td>18.67</td>
+      <td>17.09</td>
+      <td>0.68</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>HDFC Focused Fund</td>
+      <td>Focused Fund</td>
+      <td>26082.42</td>
+      <td>18.66</td>
+      <td>20.28</td>
+      <td>15.77</td>
+      <td>0.72</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>HDFC Gold ETF FoF</td>
+      <td>FoFs - Gold</td>
+      <td>12121.18</td>
+      <td>33.21</td>
+      <td>23.49</td>
+      <td>15.62</td>
+      <td>0.2</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>HDFC Infrastructure Fund</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>2392.73</td>
+      <td>22.99</td>
+      <td>22.94</td>
+      <td>13.45</td>
+      <td>1.14</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>HDFC Large and Mid Cap Fund</td>
+      <td>Large &amp; Mid Cap Fund</td>
+      <td>28500.44</td>
+      <td>17.45</td>
+      <td>16.86</td>
+      <td>15.47</td>
+      <td>0.89</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>HDFC Mid Cap Fund</td>
+      <td>Mid Cap Fund</td>
+      <td>97350.48</td>
+      <td>21.86</td>
+      <td>21.14</td>
+      <td>19.05</td>
+      <td>0.73</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>HDFC Small Cap Fund</td>
+      <td>Small Cap Fund</td>
+      <td>38809.48</td>
+      <td>15.76</td>
+      <td>17.82</td>
+      <td>19.07</td>
+      <td>0.73</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>HDFC Value Fund</td>
+      <td>Value Fund</td>
+      <td>7313.73</td>
+      <td>18.74</td>
+      <td>16.07</td>
+      <td>15.50</td>
+      <td>1.04</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Aggressive Hybrid Active FOF</td>
+      <td>FoFs (Domestic) - Hybrid</td>
+      <td>9090.64</td>
+      <td>16.20</td>
+      <td>15.32</td>
+      <td>15.89</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Children's Fund</td>
+      <td>Solution Oriented - Children's Fund</td>
+      <td>1403.26</td>
+      <td>16.76</td>
+      <td>14.24</td>
+      <td>12.82</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Dividend Yield Equity Fund</td>
+      <td>Dividend Yield Fund</td>
+      <td>6477.46</td>
+      <td>20.76</td>
+      <td>20.49</td>
+      <td>17.05</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru ELSS Tax Saver Fund</td>
+      <td>Equity Linked Savings Scheme (ELSS)</td>
+      <td>13627.19</td>
+      <td>14.29</td>
+      <td>12.95</td>
+      <td>13.87</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Equity &amp; Debt Fund</td>
+      <td>Aggressive Hybrid Fund</td>
+      <td>50032.71</td>
+      <td>17.29</td>
+      <td>17.46</td>
+      <td>16.53</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Exports &amp; Services Fund</td>
+      <td>Sectoral Fund - Service Industry</td>
+      <td>1368.82</td>
+      <td>18.67</td>
+      <td>16.75</td>
+      <td>14.85</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Focused Equity Fund</td>
+      <td>Focused Fund</td>
+      <td>16147.16</td>
+      <td>20.40</td>
+      <td>18.11</td>
+      <td>16.40</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Gold ETF FOF</td>
+      <td>FoFs - Gold</td>
+      <td>6855.77</td>
+      <td>33.27</td>
+      <td>23.51</td>
+      <td>15.45</td>
+      <td>-</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Gold ETF FOF(IDCW Payout)</td>
+      <td>FoFs - Gold</td>
+      <td>6855.77</td>
+      <td>33.27</td>
+      <td>23.51</td>
+      <td>15.45</td>
+      <td>-</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Gold ETF FOF(IDCW)</td>
+      <td>FoFs - Gold</td>
+      <td>6855.77</td>
+      <td>33.27</td>
+      <td>23.51</td>
+      <td>15.45</td>
+      <td>-</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Infrastructure Fund</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>8143.03</td>
+      <td>23.71</td>
+      <td>25.22</td>
+      <td>19.08</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Infrastructure Fund(IDCW Payout)</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>8143.03</td>
+      <td>17.23</td>
+      <td>18.23</td>
+      <td>13.61</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Infrastructure Fund(IDCW)</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>8143.03</td>
+      <td>17.23</td>
+      <td>18.23</td>
+      <td>13.61</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Large &amp; Mid Cap Fund</td>
+      <td>Large &amp; Mid Cap Fund</td>
+      <td>30146.91</td>
+      <td>19.05</td>
+      <td>18.60</td>
+      <td>16.73</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Large Cap Fund</td>
+      <td>Large Cap Fund</td>
+      <td>76296.98</td>
+      <td>14.77</td>
+      <td>14.02</td>
+      <td>14.77</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Midcap Fund</td>
+      <td>Mid Cap Fund</td>
+      <td>7789.35</td>
+      <td>26.01</td>
+      <td>19.92</td>
+      <td>18.53</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Multi Sector Passive FOF</td>
+      <td>FoFs (Domestic) - Equity Oriented</td>
+      <td>224.48</td>
+      <td>15.56</td>
+      <td>13.73</td>
+      <td>13.61</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Multi-Asset Fund</td>
+      <td>Multi Asset Allocation Fund</td>
+      <td>83883.51</td>
+      <td>17.62</td>
+      <td>18.12</td>
+      <td>16.68</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Multicap Fund</td>
+      <td>Multi Cap Fund</td>
+      <td>17675.8</td>
+      <td>20.08</td>
+      <td>17.50</td>
+      <td>16.13</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Nifty Next 50 Index Fund</td>
+      <td>Index Fund</td>
+      <td>9242.36</td>
+      <td>19.25</td>
+      <td>13.87</td>
+      <td>14.35</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Nifty Next 50 Index Fund(IDCW)</td>
+      <td>Index Fund</td>
+      <td>9242.36</td>
+      <td>19.25</td>
+      <td>13.87</td>
+      <td>14.35</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Nifty Next 50 Index Fund(IDCW-Payout)</td>
+      <td>Index Fund</td>
+      <td>9242.36</td>
+      <td>19.25</td>
+      <td>13.87</td>
+      <td>14.35</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Smallcap Fund</td>
+      <td>Small Cap Fund</td>
+      <td>8695.08</td>
+      <td>15.17</td>
+      <td>17.38</td>
+      <td>17.60</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>ICICI Pru Value Fund</td>
+      <td>Value Fund</td>
+      <td>58954.43</td>
+      <td>16.88</td>
+      <td>17.29</td>
+      <td>15.57</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Aggressive Hybrid Fund</td>
+      <td>Aggressive Hybrid Fund</td>
+      <td>8670.03</td>
+      <td>15.38</td>
+      <td>13.67</td>
+      <td>14.48</td>
+      <td>0.51</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Contra Fund</td>
+      <td>Contra Fund</td>
+      <td>5161.5</td>
+      <td>18.97</td>
+      <td>16.63</td>
+      <td>17.59</td>
+      <td>0.62</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Contra Fund(IDCW Payout)</td>
+      <td>Contra Fund</td>
+      <td>5161.5</td>
+      <td>18.97</td>
+      <td>16.64</td>
+      <td>12.71</td>
+      <td>0.62</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Contra Fund(IDCW)</td>
+      <td>Contra Fund</td>
+      <td>5161.5</td>
+      <td>18.97</td>
+      <td>16.64</td>
+      <td>12.71</td>
+      <td>0.62</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak ELSS Tax Saver Fund</td>
+      <td>Equity Linked Savings Scheme (ELSS)</td>
+      <td>6112.43</td>
+      <td>14.10</td>
+      <td>13.65</td>
+      <td>15.73</td>
+      <td>0.7</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Flexicap Fund</td>
+      <td>Flexi Cap Fund</td>
+      <td>54801.33</td>
+      <td>15.28</td>
+      <td>12.99</td>
+      <td>14.74</td>
+      <td>0.59</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Gold Fund</td>
+      <td>FoFs - Gold</td>
+      <td>7064.81</td>
+      <td>33.18</td>
+      <td>23.29</td>
+      <td>15.80</td>
+      <td>0.11</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Kotak Gold Fund(IDCW)</td>
+      <td>FoFs - Gold</td>
+      <td>7064.81</td>
+      <td>33.18</td>
+      <td>23.29</td>
+      <td>15.80</td>
+      <td>0.11</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Kotak Gold Fund(IDCW-Payout)</td>
+      <td>FoFs - Gold</td>
+      <td>7064.81</td>
+      <td>33.18</td>
+      <td>23.29</td>
+      <td>15.80</td>
+      <td>0.11</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Kotak Infra &amp; Eco Reform Fund</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>2373.39</td>
+      <td>19.59</td>
+      <td>22.19</td>
+      <td>17.67</td>
+      <td>0.72</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Infra &amp; Eco Reform Fund(IDCW)</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>2373.39</td>
+      <td>19.59</td>
+      <td>22.19</td>
+      <td>17.55</td>
+      <td>0.72</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Infra &amp; Eco Reform Fund(IDCW-Payout)</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>2373.39</td>
+      <td>19.59</td>
+      <td>22.19</td>
+      <td>17.55</td>
+      <td>0.72</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Large &amp; Midcap Fund</td>
+      <td>Large &amp; Mid Cap Fund</td>
+      <td>30126.86</td>
+      <td>17.21</td>
+      <td>15.81</td>
+      <td>16.86</td>
+      <td>0.57</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Midcap Fund</td>
+      <td>Mid Cap Fund</td>
+      <td>64749.42</td>
+      <td>21.78</td>
+      <td>19.11</td>
+      <td>19.35</td>
+      <td>0.38</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Midcap Fund(IDCW Payout)</td>
+      <td>Mid Cap Fund</td>
+      <td>64749.42</td>
+      <td>21.78</td>
+      <td>19.11</td>
+      <td>16.93</td>
+      <td>0.38</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Midcap Fund(IDCW)</td>
+      <td>Mid Cap Fund</td>
+      <td>64749.42</td>
+      <td>21.78</td>
+      <td>19.11</td>
+      <td>16.93</td>
+      <td>0.38</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Multi Asset Omni FOF</td>
+      <td>FoFs (Domestic) - Hybrid</td>
+      <td>2501.68</td>
+      <td>17.19</td>
+      <td>16.38</td>
+      <td>15.60</td>
+      <td>0.36</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Multi Asset Omni FOF(IDCW Payout)</td>
+      <td>FoFs (Domestic) - Hybrid</td>
+      <td>2501.68</td>
+      <td>17.19</td>
+      <td>16.38</td>
+      <td>15.60</td>
+      <td>0.36</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Multi Asset Omni FOF(IDCW)</td>
+      <td>FoFs (Domestic) - Hybrid</td>
+      <td>2501.68</td>
+      <td>17.19</td>
+      <td>16.38</td>
+      <td>15.60</td>
+      <td>0.36</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Small Cap Fund</td>
+      <td>Small Cap Fund</td>
+      <td>17538.11</td>
+      <td>14.85</td>
+      <td>15.24</td>
+      <td>18.56</td>
+      <td>0.58</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Small Cap Fund(IDCW)</td>
+      <td>Small Cap Fund</td>
+      <td>17538.11</td>
+      <td>14.85</td>
+      <td>15.24</td>
+      <td>15.81</td>
+      <td>0.58</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Kotak Small Cap Fund(IDCW-Payout)</td>
+      <td>Small Cap Fund</td>
+      <td>17538.11</td>
+      <td>14.85</td>
+      <td>15.24</td>
+      <td>15.81</td>
+      <td>0.58</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Banking &amp; Financial Services Fund</td>
+      <td>Sectoral Fund - Banks &amp; Financial Services</td>
+      <td>7469.77</td>
+      <td>15.46</td>
+      <td>15.53</td>
+      <td>15.01</td>
+      <td>0.99</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Banking &amp; Financial Services Fund</td>
+      <td>Sectoral Fund - Banks &amp; Financial Services</td>
+      <td>7469.77</td>
+      <td>15.46</td>
+      <td>15.53</td>
+      <td>15.01</td>
+      <td>0.99</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India ELSS Tax Saver Fund</td>
+      <td>Equity Linked Savings Scheme (ELSS)</td>
+      <td>14700.06</td>
+      <td>16.67</td>
+      <td>15.00</td>
+      <td>12.29</td>
+      <td>1.02</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Focused Fund</td>
+      <td>Focused Fund</td>
+      <td>8372.09</td>
+      <td>14.18</td>
+      <td>13.18</td>
+      <td>14.64</td>
+      <td>1.13</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Gold Savings Fund</td>
+      <td>FoFs - Gold</td>
+      <td>7178.71</td>
+      <td>33.00</td>
+      <td>23.34</td>
+      <td>15.47</td>
+      <td>0.05</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Gold Savings Fund(IDCW)</td>
+      <td>FoFs - Gold</td>
+      <td>7178.71</td>
+      <td>33.00</td>
+      <td>23.34</td>
+      <td>15.47</td>
+      <td>0.05</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Gold Savings Fund(IDCW)</td>
+      <td>FoFs - Gold</td>
+      <td>7178.71</td>
+      <td>33.00</td>
+      <td>23.34</td>
+      <td>15.47</td>
+      <td>0.05</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Growth Mid Cap Fund</td>
+      <td>Mid Cap Fund</td>
+      <td>47415.41</td>
+      <td>24.27</td>
+      <td>21.93</td>
+      <td>19.86</td>
+      <td>0.73</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Growth Mid Cap Fund</td>
+      <td>Mid Cap Fund</td>
+      <td>47415.41</td>
+      <td>24.27</td>
+      <td>21.93</td>
+      <td>19.86</td>
+      <td>0.73</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Large Cap Fund</td>
+      <td>Large Cap Fund</td>
+      <td>51690.28</td>
+      <td>15.48</td>
+      <td>16.27</td>
+      <td>15.66</td>
+      <td>0.68</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Large Cap Fund</td>
+      <td>Large Cap Fund</td>
+      <td>51690.28</td>
+      <td>15.48</td>
+      <td>16.27</td>
+      <td>15.66</td>
+      <td>0.68</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Multi Cap Fund</td>
+      <td>Multi Cap Fund</td>
+      <td>53410.99</td>
+      <td>18.75</td>
+      <td>20.58</td>
+      <td>16.77</td>
+      <td>0.72</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Multi Cap Fund</td>
+      <td>Multi Cap Fund</td>
+      <td>53410.99</td>
+      <td>18.75</td>
+      <td>20.58</td>
+      <td>16.77</td>
+      <td>0.72</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Pharma Fund</td>
+      <td>Sectoral Fund - Pharma &amp; Health Care</td>
+      <td>8635.75</td>
+      <td>22.70</td>
+      <td>14.15</td>
+      <td>16.70</td>
+      <td>0.93</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Pharma Fund</td>
+      <td>Sectoral Fund - Pharma &amp; Health Care</td>
+      <td>8635.75</td>
+      <td>22.70</td>
+      <td>14.15</td>
+      <td>16.70</td>
+      <td>0.93</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Power &amp; Infra Fund</td>
+      <td>Sectoral Fund - Energy &amp; Power</td>
+      <td>7845.17</td>
+      <td>25.57</td>
+      <td>24.35</td>
+      <td>19.12</td>
+      <td>0.96</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Power &amp; Infra Fund</td>
+      <td>Sectoral Fund - Energy &amp; Power</td>
+      <td>7845.17</td>
+      <td>25.57</td>
+      <td>24.35</td>
+      <td>19.12</td>
+      <td>0.96</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Quant Fund</td>
+      <td>Thematic Fund</td>
+      <td>111.04</td>
+      <td>17.15</td>
+      <td>15.71</td>
+      <td>15.24</td>
+      <td>0.53</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Quant Fund</td>
+      <td>Thematic Fund</td>
+      <td>111.04</td>
+      <td>17.15</td>
+      <td>15.71</td>
+      <td>15.24</td>
+      <td>0.53</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Quant Fund(IDCW)</td>
+      <td>Thematic Fund</td>
+      <td>111.04</td>
+      <td>17.15</td>
+      <td>15.71</td>
+      <td>15.21</td>
+      <td>0.53</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Quant Fund(IDCW)</td>
+      <td>Thematic Fund</td>
+      <td>111.04</td>
+      <td>17.15</td>
+      <td>15.71</td>
+      <td>15.21</td>
+      <td>0.53</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Retirement Fund-Wealth Creation</td>
+      <td>Solution Oriented, Retirement Fund - Equity Oriented</td>
+      <td>3035.29</td>
+      <td>15.18</td>
+      <td>13.79</td>
+      <td>12.48</td>
+      <td>1.02</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Retirement Fund-Wealth Creation</td>
+      <td>Solution Oriented, Retirement Fund - Equity Oriented</td>
+      <td>3035.29</td>
+      <td>15.18</td>
+      <td>13.79</td>
+      <td>12.48</td>
+      <td>1.02</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Small Cap Fund</td>
+      <td>Small Cap Fund</td>
+      <td>74484.5</td>
+      <td>19.99</td>
+      <td>21.78</td>
+      <td>22.52</td>
+      <td>0.63</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Small Cap Fund</td>
+      <td>Small Cap Fund</td>
+      <td>74484.5</td>
+      <td>19.99</td>
+      <td>21.78</td>
+      <td>22.52</td>
+      <td>0.63</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Value Fund</td>
+      <td>Value Fund</td>
+      <td>8821.21</td>
+      <td>19.22</td>
+      <td>16.76</td>
+      <td>16.69</td>
+      <td>1.07</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Vision Large &amp; Mid Cap Fund</td>
+      <td>Large &amp; Mid Cap Fund</td>
+      <td>7232.87</td>
+      <td>18.63</td>
+      <td>16.10</td>
+      <td>13.99</td>
+      <td>1.14</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Nippon India Vision Large &amp; Mid Cap Fund</td>
+      <td>Large &amp; Mid Cap Fund</td>
+      <td>7232.87</td>
+      <td>18.63</td>
+      <td>16.10</td>
+      <td>13.99</td>
+      <td>1.14</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Parag Parikh Flexi Cap Fund</td>
+      <td>Flexi Cap Fund</td>
+      <td>1,41,446.73</td>
+      <td>15.22</td>
+      <td>15.01</td>
+      <td>17.83</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Quantum Gold Saving Fund</td>
+      <td>FoFs - Gold</td>
+      <td>537.67</td>
+      <td>33.39</td>
+      <td>23.60</td>
+      <td>15.56</td>
+      <td>0.04</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>SBI Banking &amp; Financial Services Fund</td>
+      <td>Sectoral Fund - Banks &amp; Financial Services</td>
+      <td>10374.67</td>
+      <td>18.89</td>
+      <td>14.67</td>
+      <td>16.98</td>
+      <td>0.77</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Banking &amp; Financial Services Fund(IDCW)</td>
+      <td>Sectoral Fund - Banks &amp; Financial Services</td>
+      <td>10374.67</td>
+      <td>18.89</td>
+      <td>14.67</td>
+      <td>15.67</td>
+      <td>0.77</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Banking &amp; Financial Services Fund(IDCW-Payout)</td>
+      <td>Sectoral Fund - Banks &amp; Financial Services</td>
+      <td>10374.67</td>
+      <td>18.89</td>
+      <td>14.67</td>
+      <td>15.67</td>
+      <td>0.77</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Comma Fund</td>
+      <td>Thematic Fund</td>
+      <td>1125.12</td>
+      <td>19.39</td>
+      <td>13.03</td>
+      <td>17.07</td>
+      <td>1.61</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Comma Fund(IDCW Payout)</td>
+      <td>Thematic Fund</td>
+      <td>1125.12</td>
+      <td>19.39</td>
+      <td>13.03</td>
+      <td>15.07</td>
+      <td>1.61</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Comma Fund(IDCW)</td>
+      <td>Thematic Fund</td>
+      <td>1125.12</td>
+      <td>19.39</td>
+      <td>13.03</td>
+      <td>15.07</td>
+      <td>1.61</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Contra Fund</td>
+      <td>Contra Fund</td>
+      <td>47263.08</td>
+      <td>15.43</td>
+      <td>17.98</td>
+      <td>16.48</td>
+      <td>0.72</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Contra Fund(IDCW)</td>
+      <td>Contra Fund</td>
+      <td>47263.08</td>
+      <td>15.43</td>
+      <td>17.98</td>
+      <td>13.97</td>
+      <td>0.72</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Contra Fund(IDCW-Payout)</td>
+      <td>Contra Fund</td>
+      <td>47263.08</td>
+      <td>15.43</td>
+      <td>17.98</td>
+      <td>13.97</td>
+      <td>0.72</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI ELSS Tax Saver Fund</td>
+      <td>Equity Linked Savings Scheme (ELSS)</td>
+      <td>30955.01</td>
+      <td>19.57</td>
+      <td>17.61</td>
+      <td>15.57</td>
+      <td>0.93</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Focused Fund</td>
+      <td>Focused Fund</td>
+      <td>46623.39</td>
+      <td>17.52</td>
+      <td>14.01</td>
+      <td>16.22</td>
+      <td>0.76</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Focused Fund(IDCW)</td>
+      <td>Focused Fund</td>
+      <td>46623.39</td>
+      <td>17.52</td>
+      <td>14.01</td>
+      <td>13.93</td>
+      <td>0.76</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Focused Fund(IDCW-Payout)</td>
+      <td>Focused Fund</td>
+      <td>46623.39</td>
+      <td>17.52</td>
+      <td>14.01</td>
+      <td>13.93</td>
+      <td>0.76</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Gold</td>
+      <td>FoFs - Gold</td>
+      <td>16532.94</td>
+      <td>33.24</td>
+      <td>23.65</td>
+      <td>15.66</td>
+      <td>0.25</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>SBI Gold(IDCW)</td>
+      <td>FoFs - Gold</td>
+      <td>16532.94</td>
+      <td>33.24</td>
+      <td>23.65</td>
+      <td>15.65</td>
+      <td>0.25</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>SBI Gold(IDCW-Payout)</td>
+      <td>FoFs - Gold</td>
+      <td>16532.94</td>
+      <td>33.24</td>
+      <td>23.65</td>
+      <td>15.65</td>
+      <td>0.25</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>SBI Healthcare Opp Fund</td>
+      <td>Sectoral Fund - Pharma &amp; Health Care</td>
+      <td>4565.95</td>
+      <td>25.81</td>
+      <td>18.02</td>
+      <td>15.17</td>
+      <td>0.91</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Healthcare Opp Fund(IDCW)</td>
+      <td>Sectoral Fund - Pharma &amp; Health Care</td>
+      <td>4565.95</td>
+      <td>25.81</td>
+      <td>18.02</td>
+      <td>13.23</td>
+      <td>0.91</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Healthcare Opp Fund(IDCW-Payout)</td>
+      <td>Sectoral Fund - Pharma &amp; Health Care</td>
+      <td>4565.95</td>
+      <td>25.81</td>
+      <td>18.02</td>
+      <td>13.23</td>
+      <td>0.91</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Infrastructure Fund</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>4795.97</td>
+      <td>19.55</td>
+      <td>19.67</td>
+      <td>16.53</td>
+      <td>1.02</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Infrastructure Fund(IDCW)</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>4795.97</td>
+      <td>19.55</td>
+      <td>19.67</td>
+      <td>15.12</td>
+      <td>1.02</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Infrastructure Fund(IDCW-Payout)</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>4795.97</td>
+      <td>19.55</td>
+      <td>19.67</td>
+      <td>15.12</td>
+      <td>1.02</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Large &amp; Midcap Fund</td>
+      <td>Large &amp; Mid Cap Fund</td>
+      <td>39424.46</td>
+      <td>16.17</td>
+      <td>15.55</td>
+      <td>16.03</td>
+      <td>0.75</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Large &amp; Midcap Fund(IDCW Payout)</td>
+      <td>Large &amp; Mid Cap Fund</td>
+      <td>39424.46</td>
+      <td>16.17</td>
+      <td>15.55</td>
+      <td>13.79</td>
+      <td>0.75</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Large &amp; Midcap Fund(IDCW)</td>
+      <td>Large &amp; Mid Cap Fund</td>
+      <td>39424.46</td>
+      <td>16.17</td>
+      <td>15.55</td>
+      <td>13.79</td>
+      <td>0.75</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Midcap Fund</td>
+      <td>Mid Cap Fund</td>
+      <td>23416.75</td>
+      <td>14.08</td>
+      <td>16.23</td>
+      <td>15.37</td>
+      <td>0.85</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Midcap Fund(IDCW Payout)</td>
+      <td>Mid Cap Fund</td>
+      <td>23416.75</td>
+      <td>14.08</td>
+      <td>16.23</td>
+      <td>13.80</td>
+      <td>0.85</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Midcap Fund(IDCW)</td>
+      <td>Mid Cap Fund</td>
+      <td>23416.75</td>
+      <td>14.08</td>
+      <td>16.23</td>
+      <td>13.80</td>
+      <td>0.85</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Multi Asset Allocation Fund</td>
+      <td>Multi Asset Allocation Fund</td>
+      <td>18289.83</td>
+      <td>17.84</td>
+      <td>14.59</td>
+      <td>12.47</td>
+      <td>0.61</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI PSU Fund</td>
+      <td>Thematic Fund</td>
+      <td>6593.63</td>
+      <td>30.30</td>
+      <td>24.80</td>
+      <td>16.05</td>
+      <td>0.85</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI PSU Fund(IDCW)</td>
+      <td>Thematic Fund</td>
+      <td>6593.63</td>
+      <td>30.30</td>
+      <td>24.79</td>
+      <td>16.03</td>
+      <td>0.85</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI PSU Fund(IDCW-Payout)</td>
+      <td>Thematic Fund</td>
+      <td>6593.63</td>
+      <td>30.30</td>
+      <td>24.79</td>
+      <td>16.03</td>
+      <td>0.85</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Small Cap Fund</td>
+      <td>Small Cap Fund</td>
+      <td>37105.3</td>
+      <td>14.57</td>
+      <td>15.50</td>
+      <td>19.72</td>
+      <td>0.74</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Small Cap Fund(IDCW Payout)</td>
+      <td>Small Cap Fund</td>
+      <td>37105.3</td>
+      <td>14.57</td>
+      <td>15.50</td>
+      <td>16.87</td>
+      <td>0.74</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>SBI Small Cap Fund(IDCW)</td>
+      <td>Small Cap Fund</td>
+      <td>37105.3</td>
+      <td>14.57</td>
+      <td>15.50</td>
+      <td>16.87</td>
+      <td>0.74</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Banking &amp; Financial Services Fund</td>
+      <td>Sectoral Fund - Banks &amp; Financial Services</td>
+      <td>3036.02</td>
+      <td>15.22</td>
+      <td>14.18</td>
+      <td>16.30</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Banking &amp; Financial Services Fund(IDCW)</td>
+      <td>Sectoral Fund - Banks &amp; Financial Services</td>
+      <td>3036.02</td>
+      <td>14.00</td>
+      <td>13.45</td>
+      <td>15.93</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Banking &amp; Financial Services Fund(IDCW-Payout)</td>
+      <td>Sectoral Fund - Banks &amp; Financial Services</td>
+      <td>3036.02</td>
+      <td>14.00</td>
+      <td>13.45</td>
+      <td>15.93</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata ELSS Fund</td>
+      <td>Equity Linked Savings Scheme (ELSS)</td>
+      <td>4481.64</td>
+      <td>15.97</td>
+      <td>14.64</td>
+      <td>15.31</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata India Consumer Fund</td>
+      <td>Sectoral Fund - Consumption</td>
+      <td>2590.64</td>
+      <td>15.94</td>
+      <td>15.29</td>
+      <td>17.83</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata India Consumer Fund(IDCW)</td>
+      <td>Sectoral Fund - Consumption</td>
+      <td>2590.64</td>
+      <td>14.73</td>
+      <td>14.57</td>
+      <td>17.46</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata India Consumer Fund(IDCW-Payout)</td>
+      <td>Sectoral Fund - Consumption</td>
+      <td>2590.64</td>
+      <td>14.73</td>
+      <td>14.57</td>
+      <td>17.46</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata India Pharma &amp; Healthcare Fund</td>
+      <td>Sectoral Fund - Pharma &amp; Health Care</td>
+      <td>1386.99</td>
+      <td>23.64</td>
+      <td>15.71</td>
+      <td>15.25</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata India Pharma &amp; Healthcare Fund(IDCW)</td>
+      <td>Sectoral Fund - Pharma &amp; Health Care</td>
+      <td>1386.99</td>
+      <td>22.29</td>
+      <td>14.95</td>
+      <td>14.87</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata India Pharma &amp; Healthcare Fund(IDCW-Payout)</td>
+      <td>Sectoral Fund - Pharma &amp; Health Care</td>
+      <td>1386.99</td>
+      <td>22.29</td>
+      <td>14.95</td>
+      <td>14.87</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Infrastructure Fund</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>2092.77</td>
+      <td>18.62</td>
+      <td>19.99</td>
+      <td>16.67</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Infrastructure Fund(IDCW)</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>2092.77</td>
+      <td>15.99</td>
+      <td>18.38</td>
+      <td>14.09</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Infrastructure Fund(IDCW-Payout)</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>2092.77</td>
+      <td>15.99</td>
+      <td>18.38</td>
+      <td>14.09</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Mid Cap Fund</td>
+      <td>Mid Cap Fund</td>
+      <td>5731.79</td>
+      <td>20.02</td>
+      <td>17.80</td>
+      <td>17.80</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Mid Cap Fund(IDCW Payout)</td>
+      <td>Mid Cap Fund</td>
+      <td>5731.79</td>
+      <td>18.85</td>
+      <td>17.11</td>
+      <td>15.85</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Mid Cap Fund(IDCW)</td>
+      <td>Mid Cap Fund</td>
+      <td>5731.79</td>
+      <td>18.85</td>
+      <td>17.11</td>
+      <td>15.85</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Resources &amp; Energy Fund</td>
+      <td>Sectoral Fund - Energy &amp; Power</td>
+      <td>1343.33</td>
+      <td>19.19</td>
+      <td>15.49</td>
+      <td>17.92</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Resources &amp; Energy Fund(IDCW)</td>
+      <td>Sectoral Fund - Energy &amp; Power</td>
+      <td>1343.33</td>
+      <td>17.98</td>
+      <td>14.78</td>
+      <td>17.56</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Resources &amp; Energy Fund(IDCW-Payout)</td>
+      <td>Sectoral Fund - Energy &amp; Power</td>
+      <td>1343.33</td>
+      <td>17.98</td>
+      <td>14.78</td>
+      <td>17.56</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Retirement Sav Fund - Mod Plan</td>
+      <td>Solution Oriented, Retirement Fund - Equity Oriented</td>
+      <td>2145.42</td>
+      <td>15.01</td>
+      <td>12.21</td>
+      <td>13.80</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Retirement Sav Fund - Prog Plan</td>
+      <td>Solution Oriented, Retirement Fund - Equity Oriented</td>
+      <td>2131.91</td>
+      <td>16.18</td>
+      <td>12.62</td>
+      <td>14.94</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Tata Value Fund</td>
+      <td>Value Fund</td>
+      <td>8345.8</td>
+      <td>16.12</td>
+      <td>15.62</td>
+      <td>15.72</td>
+      <td>-</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Banking and Financial Services Fund</td>
+      <td>Sectoral Fund - Banks &amp; Financial Services</td>
+      <td>1340.47</td>
+      <td>15.43</td>
+      <td>13.62</td>
+      <td>12.57</td>
+      <td>1.09</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Dividend Yield Fund</td>
+      <td>Dividend Yield Fund</td>
+      <td>3697.48</td>
+      <td>17.61</td>
+      <td>13.77</td>
+      <td>14.85</td>
+      <td>1.4</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Healthcare Fund</td>
+      <td>Sectoral Fund - Pharma &amp; Health Care</td>
+      <td>1216.85</td>
+      <td>27.52</td>
+      <td>16.28</td>
+      <td>15.18</td>
+      <td>1.21</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Healthcare Fund(IDCW)</td>
+      <td>Sectoral Fund - Pharma &amp; Health Care</td>
+      <td>1216.85</td>
+      <td>27.52</td>
+      <td>16.28</td>
+      <td>15.18</td>
+      <td>1.21</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Healthcare Fund(IDCW)</td>
+      <td>Sectoral Fund - Pharma &amp; Health Care</td>
+      <td>1216.85</td>
+      <td>27.52</td>
+      <td>16.28</td>
+      <td>15.18</td>
+      <td>1.21</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Infrastructure Fund</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>2119.88</td>
+      <td>17.76</td>
+      <td>16.46</td>
+      <td>14.41</td>
+      <td>1.75</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Infrastructure Fund(IDCW)</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>2119.88</td>
+      <td>17.76</td>
+      <td>16.46</td>
+      <td>13.97</td>
+      <td>1.75</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Infrastructure Fund(IDCW)</td>
+      <td>Sectoral Fund - Infrastructure</td>
+      <td>2119.88</td>
+      <td>17.76</td>
+      <td>16.46</td>
+      <td>13.97</td>
+      <td>1.75</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Large &amp; Mid Cap Fund</td>
+      <td>Large &amp; Mid Cap Fund</td>
+      <td>5964.02</td>
+      <td>19.65</td>
+      <td>16.52</td>
+      <td>15.09</td>
+      <td>0.97</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Large &amp; Mid Cap Fund(IDCW)</td>
+      <td>Large &amp; Mid Cap Fund</td>
+      <td>5964.02</td>
+      <td>19.65</td>
+      <td>16.52</td>
+      <td>12.43</td>
+      <td>0.97</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Large &amp; Mid Cap Fund(IDCW)</td>
+      <td>Large &amp; Mid Cap Fund</td>
+      <td>5964.02</td>
+      <td>19.65</td>
+      <td>16.52</td>
+      <td>12.43</td>
+      <td>0.97</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Mid Cap Fund</td>
+      <td>Mid Cap Fund</td>
+      <td>11772.89</td>
+      <td>15.58</td>
+      <td>14.86</td>
+      <td>15.36</td>
+      <td>0.91</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Mid Cap Fund(IDCW)</td>
+      <td>Mid Cap Fund</td>
+      <td>11772.89</td>
+      <td>15.58</td>
+      <td>14.86</td>
+      <td>13.37</td>
+      <td>0.91</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Mid Cap Fund(IDCW)</td>
+      <td>Mid Cap Fund</td>
+      <td>11772.89</td>
+      <td>15.58</td>
+      <td>14.86</td>
+      <td>13.37</td>
+      <td>0.91</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Transportation &amp; Logistics Fund</td>
+      <td>Thematic Fund</td>
+      <td>3860.06</td>
+      <td>19.81</td>
+      <td>19.14</td>
+      <td>13.64</td>
+      <td>1.38</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Transportation &amp; Logistics Fund(IDCW)</td>
+      <td>Thematic Fund</td>
+      <td>3860.06</td>
+      <td>19.81</td>
+      <td>19.15</td>
+      <td>13.64</td>
+      <td>1.38</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Transportation &amp; Logistics Fund(IDCW)</td>
+      <td>Thematic Fund</td>
+      <td>3860.06</td>
+      <td>19.81</td>
+      <td>19.15</td>
+      <td>13.64</td>
+      <td>1.38</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Value Fund</td>
+      <td>Value Fund</td>
+      <td>9146.97</td>
+      <td>16.18</td>
+      <td>13.60</td>
+      <td>14.48</td>
+      <td>1.22</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Value Fund(IDCW)</td>
+      <td>Value Fund</td>
+      <td>9146.97</td>
+      <td>16.18</td>
+      <td>13.60</td>
+      <td>12.55</td>
+      <td>1.22</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>UTI Value Fund(IDCW)</td>
+      <td>Value Fund</td>
+      <td>9146.97</td>
+      <td>16.18</td>
+      <td>13.60</td>
+      <td>12.55</td>
+      <td>1.22</td>
+      <td>Very High</td>
+    </tr>
+  </tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
