@@ -1,0 +1,1 @@
+function calc(){let p=+sip.value||0,r=(+rate.value||0)/1200,n=(+years.value||0)*12;let fv=p*((Math.pow(1+r,n)-1)/r)*(1+r);out.innerText='Estimated Corpus: ₹'+Math.round(fv).toLocaleString();}
